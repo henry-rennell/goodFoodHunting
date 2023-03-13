@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<h1>Good Food Hunting</h1>
+<h2><%= dish.title %></h2>
+<img src="<%= dish.image_url %>" alt="">
+
+
+
+<form action="/dishes/<%= dish.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="dish_id" value="<%= dish.id %>" >
+        <label for="">Dish ID</label>
+        <button>delete</button>
+</form>
+<a href="/dishes/<%= dish.id %>/edit">edit this dish</a>

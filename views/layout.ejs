@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<header>
+    <h1>Good Food Hunting</h1>
+
+    <a href="/dishes/new">share a dish</a>
+</header>
+
+
+<% if (isLoggedIn()) { %>
+    <nav>
+        <a href="/">Home Page</a>
+        <p>currently logged in as <%= currentUser %></p>
+        <form action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Log Out</button>
+         </form>    
+    </nav>
+<%  } else { %>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/login">Log in</a>   
+    </nav> 
+<% } %>
+
+<%- body %>
+
+</html>

@@ -1,0 +1,20 @@
+
+<div class="everything">
+    <h2>Latest in map area</h2>
+    <div class="contentWrapper">
+                <% for (let dish of dishes) { %>
+                <div class="item">
+                    <section>
+                        <img src="<%= dish.image_url %>" alt="">
+                    </section>
+                    <section>
+                    <h2><a href="/dishes/<%= dish.id %>"><%= dish.title %></a></h2>
+                    <h3>Macdonalds</h3>
+                    </section>
+                    <footer>
+                        <span>2 minutes</span> <span><%= dish.location %></span>
+                    </footer>
+                </div>
+                <% } %> 
+    </div>
+</div>
